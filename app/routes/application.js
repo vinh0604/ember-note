@@ -22,10 +22,5 @@ export default Ember.Route.extend({
         notes: notes,
         selectedNote: selectedNote
     }
-  },
-  actions: {
-    selectNote(note) {
-        selectedNote = note
-    }
   }
 })
