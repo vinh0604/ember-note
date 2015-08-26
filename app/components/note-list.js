@@ -5,6 +5,7 @@ export default Ember.Component.extend({
     actions: {
         selectNote(note) {
             this.set('selectedNote', note)
+            this.set('editMode', false)
         }
     }
 })
