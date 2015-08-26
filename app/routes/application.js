@@ -13,13 +13,19 @@ var notes = [{
                 summary: 'Lorem ipsum dolor sit amet',
                 content: '*Lorem ipsum dolor* sit amet, consectetur adipisicing elit. Qui aut maxime, illum ipsum quo, voluptatem quod dolorem, facere incidunt nam ducimus velit sunt est magnam minus! Illo itaque dignissimos iure.',
                 tags: []
-            }];
+            }]
+var selectedNote = notes[0]
 
 export default Ember.Route.extend({
   model() {
     return {
         notes: notes,
-        selectedNote: notes[0]
+        selectedNote: selectedNote
+    }
+  },
+  actions: {
+    selectNote(note) {
+        selectedNote = note
     }
   }
 })

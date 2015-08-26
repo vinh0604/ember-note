@@ -16,3 +16,4 @@
 npm-debug.log
 testem.log
 ember-note.sublime-workspace
+.tern-port

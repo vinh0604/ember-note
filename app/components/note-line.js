@@ -6,5 +6,10 @@ export default Ember.Component.extend({
     selectedNote: null,
     isSelected: function() {
         return this.get('note').id === this.get('selectedNote').id
-    }.property('note', 'selectedNote')
+    }.property('note', 'selectedNote'),
+    actions: {
+        selectNote() {
+            this.sendAction('action', this.get('note'))
+        }
+    }
 })
