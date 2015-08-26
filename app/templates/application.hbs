@@ -1,3 +1,6 @@
-<h2 id="title">Welcome to Ember</h2>
-
-{{outlet}}
+<div id="main">
+  <div class="container">
+    {{side-bar notes=model.notes selectedNote=model.selectedNote}}
+    {{main-panel note=model.selectedNote}}
+  </div>
+</div>

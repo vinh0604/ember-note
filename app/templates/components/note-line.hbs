@@ -1,0 +1,11 @@
+<li tabindex="{{index}}" {{bind-attr class="isSelected:sidebar__item--selected :sidebar__item"}} {{action "selectNote"}}>
+  <div>
+    <h4 class="sidebar__item__title">{{note.title}}</h4>
+    <p>{{note.summary}}</p>
+    <ul class="sidebar__item__buttons">
+      <li><a href="#" title="Tag" {{action "toggleTagAdd"}}><i class="fa fa-tag"></i></a></li>
+      <li><a href="#" title="Archive" {{action "archiveNote"}}><i class="fa fa-check"></i></a></li>
+      <li><a href="#" title="Delete" {{action "deleteNote"}}><i class="fa fa-trash"></i></a></li>
+    </ul>
+  </div>
+</li>
