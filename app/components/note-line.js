@@ -10,6 +10,12 @@ export default Ember.Component.extend({
     actions: {
         selectNote() {
             this.sendAction('action', this.get('note'))
+        },
+        archiveNote() {
+            this.sendAction('archiveNote', this.get('note'))
+        },
+        deleteNote() {
+            this.sendAction('deleteNote', this.get('note'))
         }
     }
 })

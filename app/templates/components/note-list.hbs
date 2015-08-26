@@ -1,7 +1,7 @@
 <div class="sidebar__list-container">
   <ul class="sidebar__list">
     {{#each notes as |note|}}
-      {{note-line note=note index=@index selectedNote=selectedNote action="selectNote"}}
+      {{note-line note=note index=@index selectedNote=selectedNote action="selectNote" archiveNote="archiveNote" deleteNote="deleteNote"}}
     {{/each}}
   </ul>
   <div class="sidebar__list__tags" style="display: none">
