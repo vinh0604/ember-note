@@ -25,7 +25,7 @@ export default Ember.Controller.extend({
     editMode: false,
     actions: {
         search(keyword) {
-            let notes = filter(this.notes, keyword)
+            this.set('keyword', keyword)
             this.set('filteredNotes', filter.call(this))
         },
         filterTags(tags) {
@@ -37,9 +37,6 @@ export default Ember.Controller.extend({
             }
             this.notes.unshiftObject(note)
             this.set('filteredNotes', filter.call(this))
-        },
-        saveNote(note) {
-
         },
         selectNote(note) {
             selectNote.call(this, note)

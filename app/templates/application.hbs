@@ -1,6 +1,6 @@
 <div id="main">
   <div class="container">
-    {{side-bar notes=filteredNotes selectedNote=selectedNote editMode=editMote onSelect="selectNote" onArchive="archiveNote" onDelete="deleteNote" onUpdateTags="updateNoteTags" onSearch="search" onFilterTags="filterTags" onAdd="addNote"}}
-    {{main-panel note=selectedNote editMode=editMote onSave="saveNote" onUpdateEditMode="updateEditMode"}}
+    {{side-bar notes=filteredNotes selectedNote=selectedNote onSelect="selectNote" onArchive="archiveNote" onDelete="deleteNote" onUpdateTags="updateNoteTags" onSearch="search" onFilterTags="filterTags" onAdd="addNote"}}
+    {{main-panel note=selectedNote editMode=editMode onUpdateEditMode="updateEditMode"}}
   </div>
 </div>

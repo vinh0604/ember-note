@@ -5,9 +5,6 @@ export default Ember.Component.extend({
     actions: {
         enterEdit() {
             this.sendAction('onUpdateEditMode', true)
-        },
-        onSave(note) {
-            this.sendAction('onSave', note)
         }
     }
 })

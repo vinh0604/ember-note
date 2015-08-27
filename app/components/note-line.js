@@ -9,7 +9,7 @@ export default Ember.Component.extend({
     }.property('note', 'selectedNote'),
     title: function () {
         return this.get('note').title || 'New Note'
-    }.property('note'),
+    }.property('note.title'),
     actions: {
         select() {
             this.sendAction('onSelect', this.get('note'))
