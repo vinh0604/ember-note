@@ -7,15 +7,21 @@ export default Ember.Component.extend({
     isSelected: function() {
         return this.get('note').id === this.get('selectedNote').id
     }.property('note', 'selectedNote'),
+    title: function () {
+        return this.get('note').title || 'New Note'
+    }.property('note'),
     actions: {
-        selectNote() {
-            this.sendAction('action', this.get('note'))
+        select() {
+            this.sendAction('onSelect', this.get('note'))
         },
-        archiveNote() {
-            this.sendAction('archiveNote', this.get('note'))
+        archive() {
+            this.sendAction('onArchive', this.get('note'))
         },
-        deleteNote() {
-            this.sendAction('deleteNote', this.get('note'))
+        delete() {
+            this.sendAction('onDelete', this.get('note'))
+        },
+        toggleTagView() {
+            this.sendAction('onDelete', this.get('onToggleTagView'))
         }
     }
 })

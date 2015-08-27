@@ -4,7 +4,7 @@ export default Ember.Component.extend({
     tagName: '',
     actions: {
         editNote() {
-            this.sendAction()
+            this.sendAction('onEnterEdit')
         }
     }
 })

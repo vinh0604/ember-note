@@ -1,7 +1,7 @@
 <div class="main">
   {{#if editMode}}
-    {{note-form note=note}}
+    {{note-form note=note onSave="onSave"}}
   {{else}}
-    {{note-view note=note action="editNote"}}
+    {{note-view note=note onEnterEdit="enterEdit"}}
   {{/if}}
 </div>

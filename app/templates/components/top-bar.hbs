@@ -5,15 +5,15 @@
   </div>
   <ul class="sidebar__topbar__buttons">
     <li>
-      <a href="#" {{action "toggleTagFilter"}}><i class="fa fa-tags"></i></a>
+      <a href="#" {{action "toggleTagsView"}}><i class="fa fa-tags"></i></a>
     </li>
     <li>
-      <a href="#" {{action "addNote"}}><i class="fa fa-plus"></i></a>
+      <a href="#" {{action "add"}}><i class="fa fa-plus"></i></a>
     </li>
   </ul>
   <div class="sidebar__topbar__tags" style="display: none">
     <select name="tags" id="tags" multiple="multiple" data-placeholder="Filter tags...">
-      {{#each tags key="@index" as |tag|}}
+      {{#each tags as |tag|}}
         <option value="{{tag}}">{{tag}}</option>
       {{/each}}
     </select>

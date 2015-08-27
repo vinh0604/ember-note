@@ -3,19 +3,20 @@ import Ember from 'ember'
 export default Ember.Component.extend({
     tagName: '',
     actions: {
-        selectNote(note) {
-            this.set('selectedNote', note)
-            this.set('editMode', false)
+        onSelect(note) {
+            this.sendAction('onSelect', note)
         },
-        archiveNote(note) {
-            let notes = this.get('notes')
-            notes.removeObject(note)
-            this.set('selectedNote', notes[0] || { content: '' })
+        onArchive(note) {
+            this.sendAction('onArchive', note)
         },
-        deleteNote(note) {
-            let notes = this.get('notes')
-            notes.removeObject(note)
-            this.set('selectedNote', notes[0] || { content: '' })
+        onDelete(note) {
+            this.sendAction('onDelete', note)
+        },
+        onToggleTagView(note) {
+            console.log('hello')
+        },
+        updateTags(tags) {
+            this.sendAction('onUpdateTags', this.get('selectedNote'), tags)
         }
     }
 })

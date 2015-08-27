@@ -1,4 +1,4 @@
 <div class="sidebar">
-  {{top-bar}}
-  {{note-list notes=notes selectedNote=selectedNote editMode=editMode}}
+  {{top-bar onSearch="onSearch" onFilterTags="onFilterTags" onAdd="onAdd"}}
+  {{note-list notes=notes selectedNote=selectedNote editMode=editMode onSelect="onSelect" onArchive="onArchive" onDelete="onDelete" onUpdateTags="onUpdateTags"}}
 </div>
