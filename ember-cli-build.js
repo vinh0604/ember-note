@@ -27,6 +27,7 @@ module.exports = function(defaults) {
   app.import('bower_components/font-awesome/fonts/fontawesome-webfont.ttf', {
     destDir: 'fonts'
   });
+  app.import('bower_components/Selectivity.js/dist/selectivity-full.js');
 
   return app.toTree();
 };

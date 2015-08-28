@@ -6,6 +6,12 @@ var filter = function () {
         return !note.archived
     })
 
+    if (this.filteredTags.length) {
+        results = _.filter(results, (note) => {
+            return _.intersection(this.filteredTags, note.tags).length > 0
+        })
+    }
+
     if (this.keyword) {
         let fuse = new Fuse(results, { keys: ['title', 'content'] })
         results = fuse.search(this.keyword)
@@ -21,15 +27,17 @@ var selectNote = function (note) {
 
 export default Ember.Controller.extend({
     keyword: '',
-    tags: [],
     editMode: false,
+    tags: ['hello', 'world'],
+    filteredTags: [],
     actions: {
         search(keyword) {
             this.set('keyword', keyword)
             this.set('filteredNotes', filter.call(this))
         },
         filterTags(tags) {
-
+            this.set('filteredTags', tags)
+            this.set('filteredNotes', filter.call(this))
         },
         addNote() {
             let note = {

@@ -2,7 +2,6 @@ import Ember from 'ember'
 
 export default Ember.Component.extend({
     keyword: '',
-    tagName: '',
     actions: {
         add() {
             this.sendAction('onAdd')
@@ -10,11 +9,15 @@ export default Ember.Component.extend({
         search() {
             this.sendAction('onSearch', this.get('keyword'))
         },
-        filterTags() {
-            this.sendAction('onFilterTags', [])
-        },
         toggleTagsView() {
-            console.log('hello')
+            this.$('.sidebar__topbar__tags').toggle()
         }
+    },
+    didInsertElement() {
+        let self = this
+        this.$('#tags').selectivity()
+        this.$('#tags').on('change', function (event) {
+            self.sendAction('onFilterTags', $(this).selectivity('value'))
+        })
     }
 })

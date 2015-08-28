@@ -21,7 +21,7 @@ export default Ember.Component.extend({
         onAdd() {
             this.sendAction('onAdd')
         },
-        onFilterTags() {
+        onFilterTags(tags) {
             this.sendAction('onFilterTags', tags)
         },
         onUpdateTags() {
