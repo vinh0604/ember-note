@@ -45,6 +45,8 @@ export default Ember.Controller.extend({
             }
             this.notes.unshiftObject(note)
             this.set('filteredNotes', filter.call(this))
+            this.set('selectedNote', note)
+            this.set('editMode', true)
         },
         selectNote(note) {
             selectNote.call(this, note)

@@ -26,5 +26,18 @@ export default Ember.Component.extend({
     },
     click() {
         this.sendAction('onSelect', this.get('note'))
+    },
+    keyUp(event) {
+        switch(event.keyCode) {
+            case 38:
+                this.$().prev().click().focus()
+                break
+            case 40:
+                this.$().next().click().focus()
+                break
+            case 13:
+                this.$().click()
+                break
+        }
     }
 })

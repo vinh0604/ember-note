@@ -12,6 +12,9 @@ export default Ember.Component.extend({
         },
         toggleTagsView() {
             this.$('.sidebar__topbar__tags').toggle()
+            if (this.$('.sidebar__topbar__tags').is(':visible')) {
+                this.$('.selectivity-multiple-input').focus()
+            }
         }
     },
     didInsertElement() {

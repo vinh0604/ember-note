@@ -20,6 +20,7 @@ export default Ember.Component.extend({
             } else {
                 this.$('#note_tags').selectivity('value', note.tags)
                 $el.css({ top: position.top + 35 + 'px' }).show()
+                this.$('.selectivity-multiple-input').focus()
             }
         }
     },
