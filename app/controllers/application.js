@@ -61,10 +61,17 @@ export default Ember.Controller.extend({
             selectNote.call(this, this.filteredNotes[0])
         },
         updateNoteTags(note, tags) {
-
+            note.tags = tags
+            this.notes.replace(this.notes.indexOf(note), 1, note)
+            this.set('filteredNotes', filter.call(this))
         },
         updateEditMode(editMode) {
             this.set('editMode', editMode)
+        },
+        addTag(tag) {
+            if (this.tags.indexOf(tag) < 0) {
+                this.tags.pushObject(tag)
+            }
         }
     }
 })

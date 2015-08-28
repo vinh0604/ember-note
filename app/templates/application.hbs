@@ -1,6 +1,6 @@
 <div id="main">
   <div class="container">
-    {{side-bar notes=filteredNotes selectedNote=selectedNote tags=tags onSelect="selectNote" onArchive="archiveNote" onDelete="deleteNote" onUpdateTags="updateNoteTags" onSearch="search" onFilterTags="filterTags" onAdd="addNote"}}
+    {{side-bar notes=filteredNotes selectedNote=selectedNote tags=tags onSelect="selectNote" onArchive="archiveNote" onDelete="deleteNote" onUpdateTags="updateNoteTags" onSearch="search" onFilterTags="filterTags" onAdd="addNote" onAddTag="addTag"}}
     {{main-panel note=selectedNote editMode=editMode onUpdateEditMode="updateEditMode"}}
   </div>
 </div>

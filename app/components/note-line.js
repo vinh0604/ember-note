@@ -1,7 +1,10 @@
 import Ember from 'ember'
 
 export default Ember.Component.extend({
-    tagName: '',
+    tagName: 'li',
+    classNames: ['sidebar__item'],
+    classNameBindings: ['isSelected:sidebar__item--selected'],
+    attributeBindings: ['index:tabindex'],
     note: null,
     selectedNote: null,
     isSelected: function() {
@@ -11,9 +14,6 @@ export default Ember.Component.extend({
         return this.get('note').title || 'New Note'
     }.property('note.title'),
     actions: {
-        select() {
-            this.sendAction('onSelect', this.get('note'))
-        },
         archive() {
             this.sendAction('onArchive', this.get('note'))
         },
@@ -21,7 +21,10 @@ export default Ember.Component.extend({
             this.sendAction('onDelete', this.get('note'))
         },
         toggleTagView() {
-            this.sendAction('onDelete', this.get('onToggleTagView'))
+            this.sendAction('onToggleTagView', this.get('note'), this.$().position())
         }
+    },
+    click() {
+        this.sendAction('onSelect', this.get('note'))
     }
 })

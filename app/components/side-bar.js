@@ -26,6 +26,9 @@ export default Ember.Component.extend({
         },
         onUpdateTags() {
             this.sendAction('onUpdateTags', note, tags)
+        },
+        onAddTag(tag) {
+            this.sendAction('onAddTag', tag)
         }
     }
 })
