@@ -37,7 +37,9 @@ export default Ember.Component.extend({
         })
         this.$('.selectivity-multiple-input').on('blur', function() {
             setTimeout(function() {
-                self.$('.sidebar__list__tags').hide()
+                if (!self.$('.selectivity-multiple-input').is(':focus')) {
+                    self.$('.sidebar__list__tags').hide()
+                }
             }, 200);
         })
     }
